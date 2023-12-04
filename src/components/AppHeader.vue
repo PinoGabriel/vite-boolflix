@@ -55,6 +55,7 @@ section {
 
 h1 {
   color: red;
+  font-size: 2rem;
 }
 
 input {
