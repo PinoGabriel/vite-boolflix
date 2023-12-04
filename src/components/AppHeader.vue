@@ -11,8 +11,9 @@ export default {
   methods: {
     pushText() {
       axios.get(this.store.APIUrl + "&query=" + encodeURIComponent(this.store.searchText)).then(result =>{
-        this.store.film = result.data
+        this.store.film = result.data.results
         console.log(result.data);
+        console.log(this.store.film);
         console.log(this.store.searchText);
       })
     }
