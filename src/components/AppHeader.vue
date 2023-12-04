@@ -10,10 +10,16 @@ export default {
   },
   methods: {
     pushText() {
-      axios.get(this.store.APIUrl + "&query=" + encodeURIComponent(this.store.searchText)).then(result =>{
+      axios.get(this.store.APIUrlMovie + "&query=" + encodeURIComponent(this.store.searchText)).then(result =>{
         this.store.film = result.data.results
         console.log(result.data);
         console.log(this.store.film);
+        console.log(this.store.searchText);
+      })
+      axios.get(this.store.APIUrlSeries + "&query=" + encodeURIComponent(this.store.searchText)).then(result =>{
+        this.store.series = result.data.results
+        console.log(result.data.results);
+        console.log(this.store.series);
         console.log(this.store.searchText);
       })
     }
@@ -24,7 +30,7 @@ export default {
 <template>
   <section>
     <div class="container">
-      <h1>Ciao</h1>
+      <h1>BoolFlix</h1>
       <div>
         <input type="text" v-model="store.searchText" placeholder="cerca il tuo film preferito">
         <button @click="pushText()">Cerca</button>

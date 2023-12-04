@@ -19,15 +19,30 @@ export default {
 <template>
     <section class="container">
         <div v-if="store.film.length > 0">
+            <h2>FILM</h2>
             <div v-for="(movie, index) in store.film" :key="index" class="card">
-                <h2>{{ movie.title }}</h2>
+                <h3>{{ movie.title }}</h3>
                 <p>Titolo Originale: {{ movie.original_title }}</p>
-                <img v-if="getFlagImage(movie.original_language)" :src="getFlagImage(movie.original_language)" :alt="movie.original_language" />
+                <img v-if="getFlagImage(movie.original_language)" :src="getFlagImage(movie.original_language)"
+                    :alt="movie.original_language" />
                 <p>Voto: {{ movie.vote_average }}</p>
             </div>
         </div>
         <div v-else>
-            <p>Nessun film trovato</p>
+            <p class="noFilm">Nessun film trovato</p>
+        </div>
+    </section>
+
+    <section class="container">
+        <div v-if="store.series.length > 0">
+            <h2>SERIE TV</h2>
+            <div v-for="(tv, index) in store.series" :key="index" class="card">
+                <h3>{{ tv.name }}</h3>
+                <p>Titolo Originale: {{ tv.original_name }}</p>
+                <img v-if="getFlagImage(tv.original_language)" :src="getFlagImage(tv.original_language)"
+                    :alt="tv.original_language" />
+                <p>Voto: {{ tv.vote_average }}</p>
+            </div>
         </div>
     </section>
 </template>
@@ -49,11 +64,23 @@ export default {
 
 h2 {
     color: white;
+    margin: 20px;
+    color: red;
+}
+
+h3 {
+    color: white;
     margin-bottom: 8px;
 }
 
 img {
     width: 70px;
     margin: 12px 0;
+}
+
+.noFilm {
+    font-size: 5rem;
+    text-align: center;
+    margin-top: 4rem;
 }
 </style>
