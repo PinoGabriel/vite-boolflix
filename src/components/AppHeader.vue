@@ -1,6 +1,24 @@
 <script>
+import { store } from '../store.js'
+import axios from 'axios'
 export default {
-  name: "AppHeader"
+  name: "AppHeader",
+  data () {
+    return {
+      store
+    }
+  },
+  methods: {
+    pushText() {
+      console.log("Valore non codificato:", this.store.searchText);
+
+      axios.get(this.store.APIUrl + "&query=" + this.store.searchText).then(result =>{
+        this.store.film = result.data
+        console.log(result.data);
+        console.log(this.store.searchText);
+      })
+    }
+  }
 }
 </script>
 
@@ -9,8 +27,8 @@ export default {
     <div class="container">
       <h1>Ciao</h1>
       <div>
-        <input type="text" placeholder="cerca il tuo film preferito">
-        <button>Cerca</button>
+        <input type="text" v-model="store.searchText" placeholder="cerca il tuo film preferito">
+        <button @click="pushText()">Cerca</button>
       </div>
     </div>
   </section>
