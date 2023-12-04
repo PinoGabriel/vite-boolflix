@@ -10,9 +10,7 @@ export default {
   },
   methods: {
     pushText() {
-      console.log("Valore non codificato:", this.store.searchText);
-
-      axios.get(this.store.APIUrl + "&query=" + this.store.searchText).then(result =>{
+      axios.get(this.store.APIUrl + "&query=" + encodeURIComponent(this.store.searchText)).then(result =>{
         this.store.film = result.data
         console.log(result.data);
         console.log(this.store.searchText);

@@ -1,10 +1,12 @@
 <script>
 import AppHeader from './components/AppHeader.vue'
+import AppCard from './components/AppCard.vue'
 import axios from 'axios'
 import { store } from './store.js'
 export default {
   components: {
-    AppHeader
+    AppHeader,
+    AppCard
   },
   data () {
     return {
@@ -19,6 +21,9 @@ export default {
 
 <template>
   <AppHeader/>
+  <main>
+    <AppCard/>
+  </main>
 </template>
 
 <style scoped>
