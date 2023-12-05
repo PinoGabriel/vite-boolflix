@@ -18,8 +18,13 @@ export default {
 <template>
     <section>
         <div class="container">
-            <h1>BoolFlix</h1>
-            <div class="a">
+            <div class="flexItems">
+                <h1>BoolFlix</h1>
+                <a href="#">HOME</a>
+                <a href="#">FILM</a>
+                <a href="#">SERIE TV</a>
+            </div>
+            <div class="flexItems">
                 <input type="text" v-model="store.searchText" placeholder="cerca il tuo film preferito"
                     @keyup.enter="search()">
                 <button @click="search()">
@@ -46,9 +51,17 @@ section {
 h1 {
     color: red;
     font-size: 2rem;
+    margin-right: 40px;
 }
 
-.a {
+a {
+    margin: 0 5px;
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+}
+
+.flexItems {
     display: flex;
     align-items: center;
 }

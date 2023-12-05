@@ -65,7 +65,7 @@ export default {
 
 .noFilm {
     font-size: 5rem;
-    margin: 4rem auto;
+    margin: 0 auto;
 }
 
 .category {
