@@ -8,7 +8,7 @@ export default {
             return `./img/${lowercaseLanguage}.png`
         },
         getPosterImage(poster) {
-            return `http://image.tmdb.org/t/p/w780/${poster}`
+            return `http://image.tmdb.org/t/p/w342/${poster}`
         },
         getMidNumber(number) {
             return Math.ceil(number / 2)
@@ -25,22 +25,35 @@ export default {
 
 <template>
     <div class="card">
-        <img :src="getPosterImage(myprop.poster_path)" :alt="myprop.poster_path" class="posters">
-        <h3>{{ myprop.title ? myprop.title : myprop.name }}</h3>
-        <p>Titolo Originale: {{ myprop.original_title ? myprop.original_title : myprop.original_name }}</p>
-        <img v-if="getFlagImage(myprop.original_language)" :src="getFlagImage(myprop.original_language)"
-            :alt="myprop.original_language" class="flag" />
-        <p v-html="getNumberStars(myprop.vote_average)"></p>
+        <div class="mainImg">
+            <img :src="getPosterImage(myprop.poster_path)" :alt="myprop.poster_path" class="posters">
+        </div>
+        <div class="info">
+            <h3>{{ myprop.title ? myprop.title : myprop.name }}</h3>
+            <p>Titolo Originale: {{ myprop.original_title ? myprop.original_title : myprop.original_name }}</p>
+            <img v-if="getFlagImage(myprop.original_language)" :src="getFlagImage(myprop.original_language)"
+                :alt="myprop.original_language" class="flag" />
+            <p v-html="getNumberStars(myprop.vote_average)"></p>
+        </div>
     </div>
 </template>
 
 <style scoped>
 .card {
-    border: 1px solid white;
-    border-radius: 5px;
     margin: 40px;
     text-align: center;
     width: calc(100% / 3 - 80px);
+}
+
+.mainImg {
+    position: absolute;
+}
+
+.info {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 h3 {
@@ -55,7 +68,7 @@ h3 {
 
 .posters {
     width: 100%;
-    height: 350px;
     object-fit: cover;
+    object-position: top;
 }
 </style>
