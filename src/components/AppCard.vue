@@ -9,6 +9,12 @@ export default {
         },
         getPosterImage(poster) {
             return `http://image.tmdb.org/t/p/w780/${poster}`
+        },
+        getMidNumber(number) {
+            return Math.ceil(number / 2)
+        },
+        getNumberStars() {
+
         }
     }
 }
@@ -21,7 +27,9 @@ export default {
         <p>Titolo Originale: {{ myprop.original_title ? myprop.original_title : myprop.original_name }}</p>
         <img v-if="getFlagImage(myprop.original_language)" :src="getFlagImage(myprop.original_language)"
             :alt="myprop.original_language" class="flag" />
-        <p>Voto: {{ myprop.vote_average }}</p>
+        <p>Voto:
+            <span v-html="getMidNumber(myprop.vote_average)"></span>
+        </p>
     </div>
 </template>
 

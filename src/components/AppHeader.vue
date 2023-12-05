@@ -1,6 +1,5 @@
 <script>
 import { store } from '../store.js'
-import axios from 'axios'
 export default {
     name: "AppHeader",
     data() {
@@ -24,6 +23,8 @@ export default {
                 <input type="text" v-model="store.searchText" placeholder="cerca il tuo film preferito"
                     @keyup.enter="search()">
                 <button @click="search()">Cerca</button>
+                <font-awesome-icon icon="fa-solid fa-star" />
+                <font-awesome-icon icon="fa-regular fa-star" />
             </div>
         </div>
     </section>
