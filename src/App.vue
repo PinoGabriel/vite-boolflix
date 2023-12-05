@@ -38,8 +38,40 @@ export default {
 <template>
     <AppHeader @search="pushText()" />
     <main>
-        <AppCard />
+        <h2>FILM</h2>
+        <div class="container">
+            <AppCard v-if="store.film.length > 0" v-for="element in store.film" :myprop="element" />
+            <div v-else>
+                <p class="noFilm">Nessun film trovato</p>
+            </div>
+        </div>
+        <h2>SERIE TV</h2>
+        <div class="container">
+            <AppCard v-if="store.series.length > 0" v-for="element in store.series" :myprop="element" />
+        </div>
     </main>
 </template>
 
-<style scoped></style>
+
+
+
+<style scoped>
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 1100px;
+    margin: 0 auto;
+}
+
+.noFilm {
+    font-size: 5rem;
+    margin: 4rem auto;
+}
+
+h2 {
+    color: white;
+    color: red;
+    width: 1100px;
+    margin: 20px auto
+}
+</style>
