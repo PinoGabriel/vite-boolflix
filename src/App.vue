@@ -58,9 +58,9 @@ export default {
 <style scoped>
 .container {
     display: flex;
-    flex-wrap: wrap;
-    width: 1100px;
+    flex-wrap: nowrap;
     margin: 0 auto;
+    overflow-x: auto;
 }
 
 .noFilm {
@@ -71,7 +71,6 @@ export default {
 .category {
     color: white;
     color: red;
-    width: 1100px;
-    margin: 20px auto
+    margin: 20px
 }
 </style>

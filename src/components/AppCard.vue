@@ -40,9 +40,10 @@ export default {
 
 <style scoped>
 .card {
-    margin: 40px;
+    margin: 20px 10px;
     text-align: center;
-    width: calc(100% / 3 - 80px);
+    width: 20%;
+    flex-shrink: 0;
     position: relative;
 }
 
