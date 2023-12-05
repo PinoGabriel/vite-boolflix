@@ -13,8 +13,11 @@ export default {
         getMidNumber(number) {
             return Math.ceil(number / 2)
         },
-        getNumberStars() {
-
+        getNumberStars(number) {
+            const midNumber = this.getMidNumber(number)
+            const fullStar = `<i class="fa-solid fa-star"></i>`.repeat(midNumber);
+            const emptyStar = `<i class="fa-regular fa-star"></i>`.repeat(5 - midNumber);
+            return `${fullStar}${emptyStar}`;
         }
     }
 }
@@ -27,9 +30,7 @@ export default {
         <p>Titolo Originale: {{ myprop.original_title ? myprop.original_title : myprop.original_name }}</p>
         <img v-if="getFlagImage(myprop.original_language)" :src="getFlagImage(myprop.original_language)"
             :alt="myprop.original_language" class="flag" />
-        <p>Voto:
-            <span v-html="getMidNumber(myprop.vote_average)"></span>
-        </p>
+        <p v-html="getNumberStars(myprop.vote_average)"></p>
     </div>
 </template>
 
