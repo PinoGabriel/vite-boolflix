@@ -43,17 +43,23 @@ export default {
     margin: 40px;
     text-align: center;
     width: calc(100% / 3 - 80px);
+    position: relative;
 }
 
 .mainImg {
-    position: absolute;
+    height: 100%;
+    transition: linear 0.3s;
 }
 
 .info {
-    position: relative;
+    padding: 20px;
+    position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    width: 100%;
+    display: none;
+
 }
 
 h3 {
@@ -68,7 +74,16 @@ h3 {
 
 .posters {
     width: 100%;
+    height: 100%;
     object-fit: cover;
     object-position: top;
+}
+
+.card:hover .info {
+    display: block;
+}
+
+.card:hover .mainImg {
+    filter: brightness(0.1);
 }
 </style>
