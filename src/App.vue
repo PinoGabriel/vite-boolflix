@@ -38,14 +38,14 @@ export default {
 <template>
     <AppHeader @search="pushText()" />
     <main>
-        <h2 id="film" class="category">FILM</h2>
+        <h2 v-if="store.film.length > 0" id="film" class="categoryFilm">FILM</h2>
         <div class="container">
             <AppCard v-if="store.film.length > 0" v-for="element in store.film" :myprop="element" />
-            <div v-else>
-                <p class="noFilm">Nessun film trovato</p>
+            <div class="noFilm" v-else>
+                <p>Nessun film trovato</p>
             </div>
         </div>
-        <h2 id="serie" class="category">SERIE TV</h2>
+        <h2 v-if="store.film.length > 0" id="serie" class="categorySeries">SERIE TV</h2>
         <div class="container">
             <AppCard v-if="store.series.length > 0" v-for="element in store.series" :myprop="element" />
         </div>
@@ -68,9 +68,13 @@ export default {
     margin: 0 auto;
 }
 
-.category {
+.categoryFilm {
     color: white;
-    color: red;
     margin: 20px
+}
+
+.categorySeries {
+    color: white;
+    margin: 40px 20px 20px 20px
 }
 </style>
