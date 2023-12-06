@@ -45,7 +45,7 @@ export default {
 
 <style scoped>
 .card {
-    margin: 20px 10px;
+    margin: 20px 5px;
     text-align: center;
     width: 20%;
     flex-shrink: 0;
@@ -102,6 +102,4 @@ h3 {
 .card:hover .mainImg {
     filter: brightness(0.1);
 }
-
-
 </style>

@@ -59,7 +59,7 @@ export default {
 .container {
     display: flex;
     flex-wrap: nowrap;
-    margin: 0 auto;
+    margin: 0 15px;
     overflow-x: auto;
 }
 
