@@ -27,7 +27,9 @@ export default {
 <template>
     <div class="card">
         <div class="mainImg">
-            <img :src="getPosterImage(myprop.poster_path)" :alt="myprop.poster_path" class="posters">
+            <img v-if="myprop.poster_path != null" :src="getPosterImage(myprop.poster_path)" :alt="myprop.poster_path"
+                class="posters">
+            <img v-else src="/img/no-img.png" alt="no-img" class="posters">
         </div>
         <div class="info">
             <h3>{{ myprop.title ? myprop.title : myprop.name }}</h3>
@@ -36,6 +38,7 @@ export default {
                 :alt="myprop.original_language" class="flag" />
             <p v-else>{{ myprop.original_language }}</p>
             <p v-html="getNumberStars(myprop.vote_average)"></p>
+            <p class="marginOw">Overview: {{ myprop.overview }}</p>
         </div>
     </div>
 </template>
@@ -86,6 +89,10 @@ h3 {
     height: 100%;
     object-fit: cover;
     object-position: top;
+}
+
+.marginOw {
+    margin-top: 12px;
 }
 
 .card:hover .info {
