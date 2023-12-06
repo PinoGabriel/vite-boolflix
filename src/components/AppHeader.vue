@@ -36,6 +36,8 @@ export default {
 </template>
 
 <style scoped lang="scss">
+@use '../styles/partials/variables.scss' as *;
+
 section {
     background-color: #141414;
 }
@@ -49,7 +51,7 @@ section {
 }
 
 h1 {
-    color: red;
+    color: $colorRed;
     font-size: 2rem;
     margin-right: 40px;
     cursor: pointer;
@@ -58,7 +60,7 @@ h1 {
 a {
     margin: 0 5px;
     text-decoration: none;
-    color: white;
+    color: $colorWhite;
     font-weight: 600;
 }
 
@@ -69,7 +71,7 @@ a {
 
 input {
     width: 100%;
-    border: 3px solid red;
+    border: 3px solid $colorRed;
     border-right: none;
     padding: 15px;
     height: 20px;
@@ -81,8 +83,8 @@ input {
 button {
     width: 40px;
     height: 36px;
-    border: 1px solid red;
-    background: red;
+    border: 1px solid $colorRed;
+    background: $colorRed;
     text-align: center;
     color: #fff;
     border-radius: 0 5px 5px 0;

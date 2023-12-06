@@ -44,6 +44,8 @@ export default {
 </template>
 
 <style scoped lang="scss">
+@use '../styles/partials/variables.scss' as *;
+
 .card {
     margin: 20px 5px;
     text-align: center;
@@ -68,14 +70,14 @@ export default {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border: 5px solid white;
+    border: 5px solid $colorWhite;
     display: none;
     cursor: pointer;
 
 }
 
 h3 {
-    color: white;
+    color: $colorWhite;
     margin-bottom: 8px;
 }
 

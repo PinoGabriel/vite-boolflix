@@ -59,6 +59,8 @@ export default {
 
 
 <style scoped lang="scss">
+@use './styles/partials/variables.scss' as *;
+
 .container {
     display: flex;
     flex-wrap: nowrap;
@@ -72,12 +74,12 @@ export default {
 }
 
 .categoryFilm {
-    color: white;
+    color: $colorWhite;
     margin: 20px
 }
 
 .categorySeries {
-    color: white;
+    color: $colorWhite;
     margin: 40px 20px 20px 20px
 }
 </style>
