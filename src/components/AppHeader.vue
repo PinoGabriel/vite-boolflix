@@ -52,6 +52,7 @@ h1 {
     color: red;
     font-size: 2rem;
     margin-right: 40px;
+    cursor: pointer;
 }
 
 a {
@@ -74,7 +75,7 @@ input {
     height: 20px;
     border-radius: 5px 0 0 5px;
     outline: none;
-    color: #9DBFAF;
+    color: #141414;
 }
 
 button {

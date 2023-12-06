@@ -2,11 +2,12 @@
 export default {
     name: "AppCard",
     props: ["myprop"],
+    data() {
+        return {
+            availableLanguage: ["en", "ja", "it", "de", "cn", "fi", "kr", "no", "pt"]
+        }
+    },
     methods: {
-        getFlagImage(language) {
-            const lowercaseLanguage = language.toLowerCase(); // Assicurati che il nome della lingua sia in minuscolo
-            return `./img/${lowercaseLanguage}.png`
-        },
         getPosterImage(poster) {
             return `http://image.tmdb.org/t/p/w342/${poster}`
         },
@@ -31,8 +32,9 @@ export default {
         <div class="info">
             <h3>{{ myprop.title ? myprop.title : myprop.name }}</h3>
             <p>Titolo Originale: {{ myprop.original_title ? myprop.original_title : myprop.original_name }}</p>
-            <img v-if="getFlagImage(myprop.original_language)" :src="getFlagImage(myprop.original_language)"
+            <img v-if="availableLanguage.includes(myprop.original_language)" :src="`./img/${myprop.original_language}.png`"
                 :alt="myprop.original_language" class="flag" />
+            <p v-else>{{ myprop.original_language }}</p>
             <p v-html="getNumberStars(myprop.vote_average)"></p>
         </div>
     </div>
@@ -59,7 +61,13 @@ export default {
     left: 50%;
     transform: translate(-50%, -50%);
     width: 100%;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 5px solid white;
     display: none;
+    cursor: pointer;
 
 }
 
@@ -81,7 +89,7 @@ h3 {
 }
 
 .card:hover .info {
-    display: block;
+    display: flex;
 }
 
 .card:hover .mainImg {
