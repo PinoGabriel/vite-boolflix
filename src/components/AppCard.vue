@@ -72,6 +72,7 @@ export default {
     justify-content: center;
     border: 5px solid $colorWhite;
     display: none;
+    overflow: auto;
     cursor: pointer;
 
 }
