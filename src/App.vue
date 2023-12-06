@@ -38,14 +38,14 @@ export default {
 <template>
     <AppHeader @search="pushText()" />
     <main>
-        <h2 class="category">FILM</h2>
+        <h2 id="film" class="category">FILM</h2>
         <div class="container">
             <AppCard v-if="store.film.length > 0" v-for="element in store.film" :myprop="element" />
             <div v-else>
                 <p class="noFilm">Nessun film trovato</p>
             </div>
         </div>
-        <h2 class="category">SERIE TV</h2>
+        <h2 id="serie" class="category">SERIE TV</h2>
         <div class="container">
             <AppCard v-if="store.series.length > 0" v-for="element in store.series" :myprop="element" />
         </div>

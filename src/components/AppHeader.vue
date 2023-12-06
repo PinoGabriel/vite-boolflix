@@ -21,8 +21,8 @@ export default {
             <div class="flexItems">
                 <h1>BoolFlix</h1>
                 <a href="#">HOME</a>
-                <a href="#">FILM</a>
-                <a href="#">SERIE TV</a>
+                <a href="#film">FILM</a>
+                <a href="#serie">SERIE TV</a>
             </div>
             <div class="flexItems">
                 <input type="text" v-model="store.searchText" placeholder="cerca il tuo film preferito"

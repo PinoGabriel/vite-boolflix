@@ -102,4 +102,6 @@ h3 {
 .card:hover .mainImg {
     filter: brightness(0.1);
 }
+
+
 </style>
