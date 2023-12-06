@@ -35,7 +35,7 @@ export default {
     </section>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 section {
     background-color: #141414;
 }

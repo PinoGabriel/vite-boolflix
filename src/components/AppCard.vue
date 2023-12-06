@@ -43,7 +43,7 @@ export default {
     </div>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 .card {
     margin: 20px 5px;
     text-align: center;

@@ -1,3 +1,5 @@
+@use './partials/variables' as *;
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -9,14 +11,14 @@ body {
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
     color-scheme: light dark;
     color: rgba(255, 255, 255, 0.87);
-    background-color: #242424;
+    background-color: $colorDrak;
 }
 
 /* ===== Scrollbar CSS ===== */
 /* Firefox */
 * {
     scrollbar-width: auto;
-    scrollbar-color: white #242424;
+    scrollbar-color: $colorWhite $colorDrak;
 }
 
 /* Chrome, Edge, and Safari */
@@ -25,11 +27,11 @@ body {
 }
 
 *::-webkit-scrollbar-track {
-    background: #242424;
+    background: $colorDrak;
 }
 
 *::-webkit-scrollbar-thumb {
-    background-color: white;
+    background-color: $colorWhite;
     border-radius: 10px;
-    border: 3px solid #242424;
+    border: 3px solid $colorDrak;
 }
